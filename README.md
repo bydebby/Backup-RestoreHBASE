@@ -1,11 +1,13 @@
 # BACKUP HBASE
 How To Backup Hbase
 
-Run script-hbaseddl.sh
+Run script-hbaseddl.sh (Backup Hbase DDL)
+  
   [test@worker ~]$ nohup bash -x script_hbaseddl.sh &
  
-Backup file hdfs hbase -> nohup hadoop fs -get 'directory hdfs hbase' 'directory local &
+Backup file hdfs hbase (Hbase DML) -> nohup hadoop fs -get 'directory hdfs hbase' 'directory local &
 Example:
+  
   [test@worker ~]$ nohup hadoop fs -get /apps/hbase /home/test/apps/ &
   
 # RESTORE HBASE
