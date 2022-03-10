@@ -10,6 +10,10 @@ Example:
   
   [test@production ~]$ nohup hadoop fs -get /apps/hbase /home/test/apps/ &
   
+Transfer file to Backup Server (before scp, create ssh-keygen first)
+
+  [test@production ~]$ nohup scp -r /home/test/apps/hbase test@172.XX.XX.XXX:/home/test/apps/ &
+  
 # RESTORE HBASE
 How to Restore Data Hbase
 
@@ -39,16 +43,16 @@ Check the result
 
 # CHECKING FILE NOHUP.OUT RUNNING
 
-  [test@backup ~]$ jobs
+  [test@production ~]$ jobs
   [1]+ 11129 Running                 nohup bash -x script_hbaseddl.sh &
   
   or
   
-  [test@backup ~]$ tail -f nohup.out
+  [test@production ~]$ tail -f nohup.out
   
   or
   
-  [test@backup ~]$ ps -xw
+  [test@production ~]$ ps -xw
   PID TTY      STAT   TIME COMMAND
   17997 ?        S      0:01 sshd: test@pts/0
   17998 pts/0    Ss     0:04 -bash
@@ -57,12 +61,12 @@ Check the result
   
 Finding out the file nohup.out running in directory (who use this file)
   
-  [test@backup ~]$ lsof | grep nohup.out
+  [test@production ~]$ lsof | grep nohup.out
   
 Kill jobs
   
-  [test@backup ~]$ kill %1
+  [test@production ~]$ kill %1
   
   or 
   
-  [test@backup ~]$ kill -9 NumberPID
+  [test@production ~]$ kill -9 NumberPID
