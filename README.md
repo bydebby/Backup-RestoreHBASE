@@ -15,7 +15,7 @@ How to Restore Data Hbase
   hbase(main):001:0> create 'namatabelhbase',{{NAME => 'fam_namatabelhbase', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false',     KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false', CACHE_BLOOMS_ON_WRITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536'}
 
 nohup hadoop fs -put direktori_lokal direktori_hdfs &
-Example:
+
   [test@worker ~]$ nohup hadoop fs -put /home/test/apps/hbase/data/data/default/namatabelhbase /apps/hbase/data/archive/data/default/ &
 
 Check list files
